@@ -1,0 +1,14 @@
+He separado el ejercico en modulos:
+#Funcion para calculae la hora de llegada:
+CREATE OR REPLACE FUNCTION calcular_hora_llegada(
+    fechahorasalida IN DATE,
+    duracionenminutos IN NUMBER
+) RETURN DATE IS
+    fecha_llegada DATE;
+BEGIN
+    fecha_llegada := fechahorasalida + (duracionenminutos / (24 * 60));
+    RETURN fecha_llegada;
+END calcular_hora_llegada;
+/
+Tomara la hora lo que es la fecha y hora de salida de un viaje, como minutos de la ruta y devolvera la hora estimada de llegada.
+
